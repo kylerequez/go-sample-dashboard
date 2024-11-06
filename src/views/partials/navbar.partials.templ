@@ -1,0 +1,17 @@
+package partials
+
+import "github.com/kylerequez/go-sample-dashboard/src/models"
+
+templ Navbar(
+	info models.AppInfo,
+) {
+	<nav class="flex flex-row w-full px-10 py-5 bg-sky-500">
+		<div class="flex flex-initial w-fit items-center justify-center">
+			<a href="/" class="text-2xl">ADMIN DASHBOARD</a>
+		</div>
+		<div class="flex flex-1 items-center justify-end">
+			<a href="/sign-up">Sign Up</a>
+			<a href="/login">Login</a>
+		</div>
+	</nav>
+}

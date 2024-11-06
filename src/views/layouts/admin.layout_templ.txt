@@ -1,0 +1,4 @@
+<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>
+</title><link href=\"./styles/styles.css\" rel=\"stylesheet\"><script src=\"./htmx/htmx.js\"></script></head><body><div class=\"flex flex-col w-screen h-screen\">
+<div id=\"content-container\" class=\"flex flex-row w-full h-full\">
+</div></div></body></html>

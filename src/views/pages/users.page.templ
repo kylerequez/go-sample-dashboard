@@ -1,0 +1,23 @@
+package pages
+
+import "github.com/kylerequez/go-sample-dashboard/src/models"
+
+templ Users(
+	users []models.User,
+) {
+	if len(users) > 0 {
+		<div class="flex flex-row">
+			for count, user := range users {
+				if count == 0 || count % 11 == 0 {
+					@templ.Raw("<div class=\"flex flex-row\">")
+				}
+				<div>{ user.ID.String() }</div>
+				if count % 10 == 0 {
+					@templ.Raw("</div>")
+				}
+			}
+		</div>
+	} else {
+		NO USERS
+	}
+}

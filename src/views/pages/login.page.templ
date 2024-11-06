@@ -1,0 +1,43 @@
+package pages
+
+import "github.com/kylerequez/go-sample-dashboard/src/models"
+import "github.com/kylerequez/go-sample-dashboard/src/views/layouts"
+
+templ Login(
+	info models.AppInfo,
+	form models.LoginFormData,
+) {
+	@layouts.Main(info) {
+		<div class="flex flex-col w-full h-full bg-green-700 justify-center items-center">
+			@LoginForm(form)
+		</div>
+	}
+}
+
+templ LoginForm(
+	form models.LoginFormData,
+) {
+	<form id="login-form" class="flex flex-col justify-center items-center bg-sky-700" hx-post="/api/v1/auth/login" hx-target="#login-form" hx-swap="outerHTML" hx-trigger="submit">
+		<div class="flex flex-col w-full justify-center items-center">
+			ADMIN DASHBOARD
+		</div>
+		<div class="flex flex-col w-full">
+			<label for="email">Email</label>
+			<input id="email" name="email" type="email" value={ form.Email } required/>
+			if form.Errors["EMAIL"] != nil {
+				<span>{ form.Errors["EMAIL"].Error() }</span>
+			}
+		</div>
+		<div class="flex flex-col w-full">
+			<label for="password">Password</label>
+			<input id="password" name="password" type="password" value={ form.Password } required/>
+			if form.Errors["PASSWORD"] != nil {
+				<span>{ form.Errors["PASSWORD"].Error() }</span>
+			}
+		</div>
+		if form.Errors["FORM"] != nil {
+			<span>{ form.Errors["FORM"].Error() }</span>
+		}
+		<button type="submit">Login</button>
+	</form>
+}

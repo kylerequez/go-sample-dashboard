@@ -1,0 +1,12 @@
+package pages
+
+import "github.com/kylerequez/go-sample-dashboard/src/models"
+import "github.com/kylerequez/go-sample-dashboard/src/views/layouts"
+
+templ Home(
+	info models.AppInfo,
+) {
+	@layouts.Main(info) {
+		<div>HOME</div>
+	}
+}

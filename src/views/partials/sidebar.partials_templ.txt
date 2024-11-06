@@ -1,0 +1,1 @@
+<nav class=\"flex flex-col flex-initial w-[360px] h-full bg-red-400\"><a hx-get=\"/home\" hx-target=\"#content\" hx-swap=\"innerHTML\">Home</a> <a hx-get=\"/users\" hx-target=\"#content\" hx-swap=\"innerHTML\">Users</a></nav>
